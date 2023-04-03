@@ -2,6 +2,15 @@
 This is the code for an app which connects the Pubmed API to the OpenAI model GPT-3.5-turbo
 If you like a response, copy it to your clipboard before your next query!
 
+Dependencies:
+You will need to install python
+from command line, pip install openai, pip install biopython, pip install ttkthemes, and pip install lxlm
+
+How to run code:
+Download MedSplorer.py
+Navigate to the folder you downloaded the file to within the command line
+run "python Medsplorer.py"
+
 Instructions:
 
 1) Enter a valid email address in the 'EMail' field. This is a requirement of the PubMed API. 
