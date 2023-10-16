@@ -1,0 +1,5 @@
+openai
+biopython
+requests
+lxml
+ttkthemes
