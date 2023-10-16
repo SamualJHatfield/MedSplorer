@@ -18,7 +18,7 @@ n = 10
 all_references = []
 #Extracts Keywords from user query, gpt query, or literature review category
 def extract_keywords(query):
-    prompt = f"Extract 3 keywords from the following entry:\n\n{query} .Present only the keywords separated by commas with no additional numbering, labeling, or explanation"
+    prompt = f"Given the following query, identify the ideal PubMed Mesh sequence to search:\n\n{query} .Present only mesh terms in the proper format with no additional numbering, labeling, or explanation"
     keywords = evaluate_gpt4(prompt)
     return keywords
 
