@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['MedSplorer.py'],
+    ['med_splorer/src/med_splorer_hatfield/MedSplorer.py'],
     pathex=[],
     binaries=[],
     datas=[],
