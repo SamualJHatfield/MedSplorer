@@ -69,9 +69,9 @@ def evaluate_gpt4(prompt):
         n=1,
         stop=None,
         temperature=0.5,
-       
     )
 
+    print(response)  # Debug print to see the response
     return response['choices'][0]['message']['content'].strip()
 
 def science_questions(query, search_type="all"):
@@ -111,7 +111,11 @@ def science_questions(query, search_type="all"):
                 text.append(Pubmed_result)
                 for result in top_papers:
                     #catelogs a formatted version of the category references, adding them to both the total references as well as the category references
-                    all_references.append([result["author"][0],  result["year"], result["title"], f" https://pubmed.ncbi.nlm.nih.gov/{result['id']}/"])
+                    # Check if 'author' is a list and not empty before accessing its first element
+		    author = result["author"][0] if result["author"] and isinstance(result["author"], list) else "Author not available"
+
+                    all_references.append([author, result["year"], result["title"], f" https://pubmed.ncbi.nlm.nih.gov/{result['id']}/"])
+https://pubmed.ncbi.nlm.nih.gov/{result['id']}/"])
                     category_papers.append([result["author"][0],  result["year"], result["title"], f" https://pubmed.ncbi.nlm.nih.gov/{result['id']}/"])
                 #includes references used specifically in this query
                 category_references.append(category_papers)
